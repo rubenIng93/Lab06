@@ -1,1 +1,21 @@
 IMPOSTAZIONE METODO RICORSIVO:
+
+Durata analisi: 1 gg
+Costo analisi = 100(se si sposta due giorni di fila) + umidità
+Minimizzare il costo complessivo nei primi 15 gg:
+-tutte le città almeno una volta
+-non più di 6 gg in ogni città
+-almeno 3 gg prima di spostarsi da una città all'altra
+
+CONDIZIONE DI TERMINAZIONE:
+quando arrivo al giorno 15
+
+LIVELLO:
+giorno attuale
+
+SOLUZIONE PARZIALE: 
+Lista di città visitate fino al giorno i
+
+Un approccio è farsi dare tutte le combinazioni di città che soddisfano i vincoli
+e poi su quelle calcolare il costo minore.
+

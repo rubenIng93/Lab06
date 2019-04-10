@@ -1,6 +1,7 @@
 package it.polito.tdp.meteo;
 
 import java.net.URL;
+import java.time.Month;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -21,7 +22,7 @@ public class MeteoController {
 	private URL location;
 
 	@FXML
-	private ChoiceBox<Integer> boxMese;
+	private ChoiceBox<Month> boxMese;
 
 	@FXML
 	private Button btnCalcola;
@@ -41,9 +42,9 @@ public class MeteoController {
 	void doCalcolaUmidita(ActionEvent event) {
 		
 		txtResult.clear();
-		
-		int mese = boxMese.getValue();
-		List<String> medie = model.getAvgForEachCitta(mese);
+		Month m = boxMese.getValue();
+		//int mese = boxMese.getValue();
+		List<String> medie = model.getAvgForEachCitta(m.getValue());
 		for(String s : medie) {
 			txtResult.appendText(s + "\n");
 		}
@@ -61,7 +62,7 @@ public class MeteoController {
 	public void setModel(Model model) {
 		this.model= model;
 		for(int i = 1; i <= 12; i++) {
-			boxMese.getItems().add(i);
+			boxMese.getItems().add(Month.of(i));
 		}
 		
 	}
