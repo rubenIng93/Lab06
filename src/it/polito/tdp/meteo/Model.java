@@ -1,8 +1,13 @@
 package it.polito.tdp.meteo;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
+import it.polito.tdp.meteo.bean.Rilevamento;
 import it.polito.tdp.meteo.bean.SimpleCity;
+import it.polito.tdp.meteo.db.MeteoDAO;
 
 public class Model {
 
@@ -16,6 +21,9 @@ public class Model {
 	}
 
 	public String getUmiditaMedia(int mese) {
+		
+		
+		
 
 		return "TODO!";
 	}
@@ -34,6 +42,14 @@ public class Model {
 	private boolean controllaParziale(List<SimpleCity> parziale) {
 
 		return true;
+	}
+	
+	public List<String> getAvgForEachCitta(int mese){
+				
+		MeteoDAO dao = new MeteoDAO();
+		List<String> medie = dao.getAllRilevamentiLocalitaMese(mese);
+		return medie;
+		
 	}
 
 }
