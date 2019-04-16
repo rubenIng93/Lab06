@@ -16,6 +16,10 @@ giorno attuale
 SOLUZIONE PARZIALE: 
 Lista di città visitate fino al giorno i
 
+SOLUZIONE COMPLETA:
+Sequenza (List) di 15 città; purchè rispetti i vincoli
+
 Un approccio è farsi dare tutte le combinazioni di città che soddisfano i vincoli
 e poi su quelle calcolare il costo minore.
 
+DEVO GENERARE TUTTE LE SOLUZIONI POSSIBILI E SOLO ALLA FINE VALUTARE QUAL È LA MIGLIORE!!

@@ -5,6 +5,7 @@ import java.time.Month;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import it.polito.tdp.meteo.bean.Citta;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -35,6 +36,17 @@ public class MeteoController {
 
 	@FXML
 	void doCalcolaSequenza(ActionEvent event) {
+		
+		txtResult.clear();
+		Month m = boxMese.getValue();
+		
+		if(m != null) {
+			List<Citta> best = model.calcolaSequenza(m);
+			txtResult.appendText("Sequenza ottima per il mese "+m.toString()+"\n");
+			txtResult.appendText(best+"\n");
+			txtResult.appendText("Il costo è : "+model.getBestCosto());
+			
+		}
 
 	}
 
